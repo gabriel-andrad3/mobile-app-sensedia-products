@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "API_Platform_Demo"
