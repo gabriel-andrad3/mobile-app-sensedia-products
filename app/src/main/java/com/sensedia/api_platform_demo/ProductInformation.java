@@ -18,7 +18,7 @@ public class ProductInformation extends AppCompatActivity {
 
         txtProduct = findViewById(R.id.txtProduct);
         txtFocus = findViewById(R.id.txtFocus);
-        txtYear = findViewById(R.id.txtYear);
+        txtYear = findViewById(R.id.txtLabelYear);
         txtFeatures = findViewById(R.id.txtFeatures);
         imgProduct = findViewById(R.id.imgProduct);
 
@@ -35,7 +35,7 @@ public class ProductInformation extends AppCompatActivity {
                 imgProduct.setImageResource(R.drawable.apip2);
                 break;
             case "Adaptive Governance":
-                imgProduct.setImageResource(R.drawable.conn);
+                imgProduct.setImageResource(R.drawable.ag);
                 break;
             case "Events Hub":
                 imgProduct.setImageResource(R.drawable.eh);

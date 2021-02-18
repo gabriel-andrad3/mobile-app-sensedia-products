@@ -8,9 +8,9 @@
 
     <ImageView
         android:id="@+id/imgProduct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="163dp"
+        android:layout_width="101dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="148dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,81 +20,89 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="78dp"
+        android:layout_marginBottom="38dp"
         android:text="..."
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imgProduct"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtLabelFocus"
+        android:id="@+id/txtLabelGoal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="48dp"
-        android:text="Focus:"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="128dp"
+        android:text="Goal:"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtLabelYear"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgProduct" />
 
     <TextView
         android:id="@+id/txtLabelYear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="52dp"
-        android:text="Year:"
+        android:layout_width="69dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="47dp"
+        android:text="Year of launch:"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtLabelFeatures"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLabelGoal" />
 
     <TextView
         android:id="@+id/txtLabelFeatures"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="176dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="172dp"
         android:text="Features:"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLabelYear" />
 
     <TextView
         android:id="@+id/txtFocus"
-        android:layout_width="220dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginBottom="36dp"
-        android:text="..."
+        android:layout_width="267dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="127dp"
+        android:text="Microservices observability, control and security"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtLabelYear"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtLabelGoal"
+        app:layout_constraintTop_toBottomOf="@+id/imgProduct" />
+
+    <TextView
+        android:id="@+id/txtFocus2"
+        android:layout_width="271dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="30dp"
+        android:text="2021"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtLabelYear"
+        app:layout_constraintTop_toBottomOf="@+id/txtFocus" />
 
     <TextView
         android:id="@+id/txtFeatures"
-        android:layout_width="230dp"
-        android:layout_height="74dp"
-        android:layout_marginBottom="144dp"
-        android:text="..."
+        android:layout_width="271dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginBottom="76dp"
+        android:text="API Reuse, Impact Analysis, Quality Standards, Development, Deploy Policies and API Catalogs"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.228"
-        app:layout_constraintStart_toEndOf="@+id/txtLabelFeatures" />
-
-    <TextView
-        android:id="@+id/txtYear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginBottom="52dp"
-        android:text="..."
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtLabelFeatures"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/txtLabelFeatures"
+        app:layout_constraintTop_toBottomOf="@+id/txtFocus2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

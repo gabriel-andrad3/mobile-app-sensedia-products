@@ -25,6 +25,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class SensediaProductsActivity extends AppCompatActivity {
     ListView lvSensediaProducts;
@@ -39,10 +40,14 @@ public class SensediaProductsActivity extends AppCompatActivity {
 
         lvSensediaProducts = (ListView) findViewById(R.id.lvSensediaProducts);
 
-        fillSensediaProductsListView();
+        try {
+            fillSensediaProductsListView();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void fillSensediaProductsListView() {
+    private void fillSensediaProductsListView() throws InterruptedException {
         RequestQueue queue = Volley.newRequestQueue(this);
         String url ="https://apiplatform.sensedia.com/dev/sensedia-products/1.0/sensedia-products";
 
@@ -62,7 +67,7 @@ public class SensediaProductsActivity extends AppCompatActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-//                    Toast.makeText(SensediaProductsActivity.this, sensediaProducts.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SensediaProductsActivity.this, sensediaProducts.toString(), Toast.LENGTH_SHORT).show();
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -74,7 +79,7 @@ public class SensediaProductsActivity extends AppCompatActivity {
         );
 
         queue.add(request);
-        
+
         sensediaProducts.add("API Management");
         sensediaProducts.add("Adaptive Governance");
         sensediaProducts.add("Events Hub");
