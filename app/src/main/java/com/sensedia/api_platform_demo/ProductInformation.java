@@ -30,8 +30,8 @@ public class ProductInformation extends AppCompatActivity {
     }
 
     private void setProductImage(String product) {
-        switch (product) {
-            case "API Management":
+        switch (product) { // refactor this switch - not following SOLID: O
+            case "API Platform":
                 imgProduct.setImageResource(R.drawable.apip2);
                 break;
             case "Adaptive Governance":
