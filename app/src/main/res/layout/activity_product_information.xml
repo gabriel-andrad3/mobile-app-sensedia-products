@@ -32,10 +32,9 @@
     <TextView
         android:id="@+id/txtLabelGoal"
         android:layout_width="wrap_content"
-        android:layout_height="42dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="128dp"
-        android:orientation="vertical"
+        android:layout_marginTop="136dp"
         android:text="Goal:"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -43,11 +42,11 @@
         app:layout_constraintTop_toBottomOf="@+id/imgProduct" />
 
     <TextView
-        android:id="@+id/txtLabelYear"
+        android:id="@+id/txtLabelYearOfLaunch"
         android:layout_width="69dp"
         android:layout_height="46dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:text="Year of launch:"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -59,21 +58,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="54dp"
         android:layout_marginBottom="172dp"
         android:text="Features:"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtLabelYear" />
+        app:layout_constraintTop_toBottomOf="@+id/txtLabelYearOfLaunch"
+        app:layout_constraintVertical_bias="0.076" />
 
     <TextView
-        android:id="@+id/txtFocus"
+        android:id="@+id/txtGoal"
         android:layout_width="267dp"
         android:layout_height="42dp"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="127dp"
+        android:layout_marginTop="136dp"
         android:text="..."
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,29 +81,29 @@
         app:layout_constraintTop_toBottomOf="@+id/imgProduct" />
 
     <TextView
-        android:id="@+id/txtFocus2"
+        android:id="@+id/txtYearOfLaunch"
         android:layout_width="271dp"
         android:layout_height="46dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:text="..."
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtLabelYear"
-        app:layout_constraintTop_toBottomOf="@+id/txtFocus" />
+        app:layout_constraintStart_toEndOf="@+id/txtLabelYearOfLaunch"
+        app:layout_constraintTop_toBottomOf="@+id/txtGoal" />
 
     <TextView
         android:id="@+id/txtFeatures"
         android:layout_width="271dp"
         android:layout_height="118dp"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="76dp"
         android:text="..."
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtLabelFeatures"
-        app:layout_constraintTop_toBottomOf="@+id/txtFocus2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtYearOfLaunch" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,11 +22,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SensediaProductsActivity extends AppCompatActivity {
+public class ListOfProducts extends AppCompatActivity {
     ListView lvSensediaProducts;
 
     ArrayAdapter<String> adapter;
@@ -35,21 +34,17 @@ public class SensediaProductsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sensedia_products);
+        setContentView(R.layout.activity_list_of_products);
 
         lvSensediaProducts = (ListView) findViewById(R.id.lvSensediaProducts);
 
-        try {
-            fillSensediaProductsListView();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        fillSensediaProductsListView();
     }
 
-    private void fillSensediaProductsListView() throws IOException {
+    private void fillSensediaProductsListView() {
         String url ="https://apiplatform.sensedia.com/dev/sensedia-products/1.0/sensedia-products";
 
-        sensediaProducts = new ArrayList<String>();
+        sensediaProducts = new ArrayList<>();
 
         RequestQueue queue = Volley.newRequestQueue(this);
 
@@ -57,14 +52,14 @@ public class SensediaProductsActivity extends AppCompatActivity {
             new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
-                    JSONArray products = null;
+                    JSONArray products;
                     try {
                         products = response.getJSONArray("sensedia's products");
                         for (int i=0; i<products.length(); i++) {
                             JSONObject product = products.getJSONObject(i);
                             sensediaProducts.add(product.getString("name")); // PROBLEM HERE
                         }
-                        adapter = new ArrayAdapter<String>(SensediaProductsActivity.this, android.R.layout.simple_list_item_1, sensediaProducts);
+                        adapter = new ArrayAdapter<>(ListOfProducts.this, android.R.layout.simple_list_item_1, sensediaProducts);
                         lvSensediaProducts.setAdapter(adapter);
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -74,7 +69,7 @@ public class SensediaProductsActivity extends AppCompatActivity {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Log.d("ProductsActivity","onErrorResponse: " + error.getMessage());
-                    Toast.makeText(SensediaProductsActivity.this, "That didn't work!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ListOfProducts.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         );

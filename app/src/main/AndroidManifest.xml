@@ -7,21 +7,21 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Sensedia Products"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.API_Platform_Demo">
         <activity
             android:name=".ProductInformation"
-            android:parentActivityName=".SensediaProductsActivity">
+            android:parentActivityName=".ListOfProducts">
         </activity>
 
         <activity
-            android:name=".SensediaProductsActivity"
-            android:parentActivityName=".MainActivity">
+            android:name=".ListOfProducts"
+            android:parentActivityName=".Home">
         </activity>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
