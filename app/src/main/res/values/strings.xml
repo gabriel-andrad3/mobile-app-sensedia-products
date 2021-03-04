@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">API_Platform_Demo</string>
+    <string name="choose_the_product_to_know_more_about">Choose the product to know more about</string>
 </resources>

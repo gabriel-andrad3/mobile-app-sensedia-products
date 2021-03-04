@@ -6,13 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".ListOfProducts">
 
+    <TextView
+        android:id="@+id/lblHeader"
+        android:layout_width="385dp"
+        android:layout_height="24dp"
+        android:text="@string/choose_the_product_to_know_more_about"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/lvSensediaProducts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679" />
+
     <ListView
         android:id="@+id/lvSensediaProducts"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="391dp"
+        android:layout_height="634dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.99">
+
+    </ListView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
