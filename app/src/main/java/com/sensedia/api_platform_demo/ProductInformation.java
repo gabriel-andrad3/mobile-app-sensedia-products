@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -18,6 +19,9 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProductInformation extends AppCompatActivity {
     TextView txtProduct, txtGoal, txtYearOfLaunch, txtFeatures;
@@ -68,8 +72,15 @@ public class ProductInformation extends AppCompatActivity {
                     Log.d("ProductsActivity","onErrorResponse: " + error.getMessage());
                     Toast.makeText(ProductInformation.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-            }
-        );
+            }) {
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+
+                    headers.put("client-id", "99982fb2-156a-3bc1-bd7c-0105613cebdf");
+                    return headers;
+                }
+        };
 
         queue.add(request);
     }

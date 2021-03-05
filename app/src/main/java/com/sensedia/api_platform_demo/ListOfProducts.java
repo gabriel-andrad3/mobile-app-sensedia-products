@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -23,7 +24,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ListOfProducts extends AppCompatActivity {
     ListView lvSensediaProducts;
@@ -71,8 +74,15 @@ public class ListOfProducts extends AppCompatActivity {
                     Log.d("ProductsActivity","onErrorResponse: " + error.getMessage());
                     Toast.makeText(ListOfProducts.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-            }
-        );
+            }) {
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+
+                    headers.put("client-id", "99982fb2-156a-3bc1-bd7c-0105613cebdf");
+                    return headers;
+                }
+        };
 
         queue.add(request);
 
